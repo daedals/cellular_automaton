@@ -19,12 +19,12 @@ A python application implementing the common 'falling sand' simulation. It is me
 
 ## Installation
 
-To install WeatherApp, follow these steps:
+To install, follow these steps:
 
 1. Clone the repository:
     ```sh
     git clone https://github.com/daedals/cellular_automaton.git
-    cd weatherapp
+    cd cellular_automaton
     ```
 
 2. Create and activate a virtual environment:
@@ -48,7 +48,11 @@ To install WeatherApp, follow these steps:
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - see the ![License](https://github.com/daedals/cellular_automaton/blob/main/LICENSE)
+This project is licensed under the GNU General Public License v3.0 - see the ![License](https://github.com/daedals/cellular_automaton/blob/main/LICENSE) for details.
 
 ## Contact
 
+If you have any questions or suggestions, feel free to open an issue or contact the project maintainers:
+
+Maintainer: Florian Klein
+Email: f.klein@protonmail.com
