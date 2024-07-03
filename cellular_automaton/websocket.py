@@ -1,15 +1,16 @@
 from fastapi import APIRouter, WebSocket
-from .simulation import Simulation
+from .canvas import Canvas
 
 router = APIRouter()
-
-simulation = Simulation()
+canvas = Canvas()
 
 @router.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
-    """ websocket endpoint """
     await websocket.accept()
     while True:
-        data = await websocket.receive_text()
-        result = simulation.update(data)
-        await websocket.send_text(result)
+        data = await websocket.receive_json()
+        if data["action"] == "draw":
+            x, y, color = data["x"], data["y"], data["color"]
+            canvas.draw(x, y, color)
+        elif data["action"] == "get_canvas":
+            await websocket.send_json({"canvas": canvas.get_canvas().tolist()})

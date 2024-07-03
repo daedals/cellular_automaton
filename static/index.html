@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Falling Sands Simulation</title>
-    <script>
-        const ws = new WebSocket("ws://localhost:8000/ws");
-        ws.onmessage = function(event) {
-            const message = event.data;
-            console.log("Received:", message);
-            // Update the simulation UI with the new state
-        };
-
-        function sendUpdate(data) {
-            ws.send(data);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paintable Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid black;
         }
-    </script>
+    </style>
 </head>
 <body>
-    <h1>Falling Sands Simulation</h1>
-    <canvas id="simulationCanvas"></canvas>
+    <h1>Paintable Canvas</h1>
+    <canvas id="paintCanvas" width="600" height="1500"></canvas>
+    <script src="/static/js/canvas.js"></script>
 </body>
 </html>

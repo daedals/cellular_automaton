@@ -1,14 +1,25 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from .websocket import router as websocket_router
+from .canvas import Canvas
 
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-app.include_router(websocket_router)
+canvas = Canvas(1500,600)
 
 @app.get("/")
-def read_root():
-    """  read_root """
-    return {"message": "Welcome to the Falling Sands Simulation!"}
+async def get():
+    return HTMLResponse(open("static/index.html").read())
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    while True:
+        data = await websocket.receive_json()
+        if data["action"] == "draw":
+            x, y, color = data["x"], data["y"], data["color"]
+            canvas.draw(x, y, color)
+        elif data["action"] == "get_canvas":
+            await websocket.send_json({"canvas": canvas.get_canvas().tolist()})
