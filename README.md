@@ -1,6 +1,6 @@
 # cellular_automaton
 
-A python application implementing the common 'falling sand' simulation. It is meant as a self-learning exercise working with Github Pages and Pythons FastAPI.
+A python application implementing the common 'falling sand' simulation. It is meant as a self-learning exercise working with Pythons FastAPI.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ A python application implementing the common 'falling sand' simulation. It is me
 
 ## Description
 
-A python application implementing the common 'falling sand' simulation. It is meant as a self-learning exercise working with Github Pages and Pythons FastAPI.
+A python application implementing the common 'falling sand' simulation. It is meant as a self-learning exercise working with Pythons FastAPI.
 
 ## Installation
 
@@ -39,6 +39,13 @@ To install, follow these steps:
     ```
 
 ## Usage
+
+Start uvicorn server with VSCode Command 'Reload uvicorn server' or type
+    ```sh
+    python.exe uvicorn cellular_automaton.main:app --reload
+    ```
+
+Open browser and follow IP given in shell.
 
 ## Features
 

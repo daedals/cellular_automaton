@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build",
-            // "type": "shell",
-            "command": "uvicorn app.main:app --reload"
+            "label": "Reload uvicorn server",
+            "type": "shell",
+            "command": "uvicorn cellular_automaton.main:app --reload"
         }
     ]
 }
