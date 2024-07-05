@@ -19,7 +19,7 @@ class Canvas:
         for _x in range(max(0, x-radius), min(self.width-1, x+radius)):
             for _y in range(max(0, y-radius), max(self.height-1, y+radius)):
                 if (_x - x)**2 + (_y - y)** 2 < radius**2:
-                    self.canvas_rgb[_x, _y] = color
+                    self.canvas_rgb[_x, _y] = [255, 255, 255]
 
     def get_canvas(self):
         return self.canvas_rgb
